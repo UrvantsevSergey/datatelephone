@@ -1,4 +1,4 @@
-
+from logger import write_data, read_data
 
 
 def interface():
