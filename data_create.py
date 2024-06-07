@@ -5,7 +5,7 @@ def name_data():
 
 def surname_data():
     surname = input("Введите фамилию: ")
-    print("Секундочку " + surname + " ваша фамилия записана!")
+    print("Ваша фамилия " + surname + " ваша фамилия записана!")
     return surname
 
 def phone_data():

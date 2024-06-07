@@ -11,4 +11,3 @@ def interface():
         write_data()
     elif command == 2:
         read_data()
-interface()

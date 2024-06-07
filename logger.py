@@ -6,7 +6,16 @@ def write_data():
     surname = surname_data()
     phone = phone_data()
     address = address_data()
-    var = int(input(f"%s" %name + " " + surname + " в каком формате вы хотите записать данные? \n\n 1 Вариант:" f"\n{name} \n{surname}\n{phone}\n{address} \n\n 2 Вариант: {name}; {surname}; {phone}; {address} \n\n Выберите вариант: "))
+    var = int(input(f"В каком формате вы хотите записать данные? \n\n"
+    f"1 Вариант: \n"
+    f"{name}\n{surname}\n{phone}\n{address} \n\n"
+    f"2 Вариант: \n"
+    f"{name};{surname};{phone};{address} \n\n"
+    f"Выберите вариант: "))
+
+
+
+
     while var != 1 and var != 2:
         print("Неправильная команда")
         var = int(input("введите команду: "))
@@ -22,6 +31,18 @@ def write_data():
             f.close()
 
 def read_data():
-    pass
+    print("Вывожу данные из первого файла: \n\n")
+    with open("data_first_var.csv" ,"r", encoding = 'utf-8') as f:
+        data_first = f.readlines()
+        data_first_list = []
+        j = 0
+        for i in range(len(data_first)):
+            if data_first[i] == "\n" or i == len(data_first) - 1:
+                data_first_list.append("".join(data_first_list[j:i+1]))
+                j = i
+        print("".join(data_first_list))
 
-write_data()
+    print("Вывожу данные из второго файла: \n\n")
+    with open("data_sec_var.csv" ,"r", encoding = 'utf-8') as f:
+        data_sec = f.readlines()
+        print(*data_sec)
