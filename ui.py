@@ -1,4 +1,4 @@
-from logger import write_data, read_data
+from logger import input_data, print_data
 
 
 def interface():
@@ -8,6 +8,6 @@ def interface():
         print("Неправильная команда")
         command = int(input("введите команду: "))
     if command == 1:   
-        write_data()
+        input_data()
     elif command == 2:
-        read_data()
+        print_data()
