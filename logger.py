@@ -45,3 +45,10 @@ def print_data():
         data_second = f.readlines()
         print(*data_second)
         
+def delete_data():
+    pass
+
+
+
+def rename_data():
+    pass
