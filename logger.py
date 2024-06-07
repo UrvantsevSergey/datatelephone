@@ -12,10 +12,15 @@ def write_data():
         var = int(input("введите команду: "))
 
     if var == 1:
-        print(f"{name} \n{surname}\n{phone}\n{address}")
+        with open("data_first_var.csv" ,"a", encoding = 'utf-8') as f:
+            f.write(f"{name} \n{surname}\n{phone}\n{address} \n\n")
+            f.close()
+
     elif var == 2:
-        print(f"{name}; {surname}; {phone}; {address}")
-        
+        with open("data_second_var.csv", "a", encoding = 'utf-8') as f:
+            f.write(f"{name}; {surname}; {phone}; {address} \n\n")
+            f.close()
+
 def read_data():
     pass
 
