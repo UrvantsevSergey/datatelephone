@@ -46,7 +46,39 @@ def print_data():
         print(*data_second)
         
 def delete_data():
-    pass
+    s = int(input("Выберите справочник: \n 1 - 1 справочник \n 2 - 2 справочник \n"))
+    while s != 1 and s != 2:
+        print("Неправильный ввод")
+        s = int(input("Выберите справочник: \n 1 - 1 справочник \n 2 - 2 справочник \n"))
+    if s == 1:
+        print('Вывожу данные из 1 файла: \n')
+        with open('data_first_var.csv', 'r+', encoding='utf-8') as f:
+            data_first = f.readlines()
+            for i, line in enumerate((data_first)):
+                print(f'{i+1} {line.strip()}')
+            n = int(input("Выберите номер строки для удаления: "))
+            while n < 0 or n > len(data_first):
+                print("Неправильный ввод")
+                n = int(input("Выберите номер строки для удаления: "))
+        with open("data_first_var.csv", "w", encoding="utf-8") as f:
+            for i, line in enumerate(data_first):
+                if i+1 != n:
+                    f.write(line)
+    elif s == 2:
+        print('Вывожу данные из 2 файла: \n')
+        with open('data_sec_var.csv', 'r+', encoding='utf-8') as f:
+            data_first = f.readlines()
+            for i, line in enumerate((data_first)):
+                print(f'{i+1} {line.strip()}')
+            n = int(input("Выберите номер строки для удаления: "))
+            while n < 0 or n > len(data_first):
+                print("Неправильный ввод")
+                n = int(input("Выберите номер строки для удаления: "))
+        with open("data_sec_var.csv", "w", encoding="utf-8") as f:
+            for i, line in enumerate(data_first):
+                if i+1 != n:
+                    f.write(line)
+    
 
 
 
