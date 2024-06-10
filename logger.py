@@ -71,6 +71,7 @@ def delete_data():
             for i, line in enumerate(data_first):
                 if i+1 != n:
                     f.write(line)
+        print("Строка удалена!\n")
     if s == 2:
     # Выводим пронумерованные данные из 2 файла
         print('Вывожу данные из 2 файла: \n')
@@ -88,6 +89,7 @@ def delete_data():
             for i, line in enumerate(data_first):
                 if i+1 != n:
                     f.write(line)
+        print("Строка удалена!\n")
 
 def rename_data():
     # Выбираем с каким справочником работаем
@@ -116,6 +118,7 @@ def rename_data():
                 if i+1 == n:
                     data_first[i] = r + '\n'
                     f.writelines(data_first)
+        print("Данные изменены!\n")
     if s == 2:
         # Выводим пронумерованные данные из файла
         print('Вывожу данные из 2 файла: \n')
@@ -141,5 +144,6 @@ def rename_data():
                 if i+1 == n:
                     data_first[i] = r + '\n'
                     f.writelines(data_first)
+        print("Данные изменены!\n")
 
                 
