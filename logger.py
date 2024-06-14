@@ -47,6 +47,68 @@ def print_data():
         
 
 # ДОМАШНЕЕ ЗАДАНИЕ 
+def copy_data():
+    # Выбираем с каким справочником работаем
+    s = int(input("Выберите справочник: \n 1 - 1 справочник \n 2 - 2 справочник \n"))
+    while s != 1 and s != 2:
+        print("Неправильный ввод")
+        s = int(input("Выберите справочник: \n 1 - 1 справочник \n 2 - 2 справочник \n"))
+    if s == 1:
+        # Выводим пронумерованные данные из 1 файла
+        print('Вывожу данные из 1 файла: \n')
+        with open('data_first_var.csv', 'r+', encoding='utf-8') as f:
+            data_first = f.readlines()
+            for i, line in enumerate((data_first)):
+                print(f'{i+1} {line.strip()}')
+        # Проверка на наличие данных по номеру строки
+            n = int(input("Выберите номер строки для копирования: "))
+            while n < 0 or n > len(data_first):
+                print("Неправильный ввод")
+                n = int(input("Выберите номер строки для копирования: "))
+        # Записываем строку в переменную r
+            for i, line in enumerate(data_first):
+                if i+1 == n:
+                    r = line.strip()
+                    print(r)
+
+        # Записываем новые данные в файл
+        with open('data_sec_var.csv', 'r+', encoding='utf-8') as f:
+            data_sec = f.readlines()
+            n_sec = len(data_sec)
+            for i, line in enumerate(data_sec):
+                if i+1 == n_sec:
+                    f.write(r)
+                    f.write('\n\n')
+                    print("Данные скопированы\n")
+    if s == 2:
+        # Выводим пронумерованные данные из 1 файла
+        print('Вывожу данные из 2 файла: \n')
+        with open('data_sec_var.csv', 'r+', encoding='utf-8') as f:
+            data_first = f.readlines()
+            for i, line in enumerate((data_first)):
+                print(f'{i+1} {line.strip()}')
+        # Проверка на наличие данных по номеру строки
+            n = int(input("Выберите номер строки для копирования: "))
+            while n < 0 or n > len(data_first):
+                print("Неправильный ввод")
+                n = int(input("Выберите номер строки для копирования: "))
+        # Записываем строку в переменную r
+            for i, line in enumerate(data_first):
+                if i+1 == n:
+                    r = line.strip()
+                    print(r)
+
+        # Записываем новые данные в файл
+        with open('data_first_var.csv', 'r+', encoding='utf-8') as f:
+            data_sec = f.readlines()
+            n_sec = len(data_sec)
+            for i, line in enumerate(data_sec):
+                if i+1 == n_sec:
+                    f.write(r)
+                    f.write('\n\n')
+                    print("Данные скопированы\n")
+
+
 
 def delete_data():
     # Выбираем с каким справочников работаем
